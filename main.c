@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include <string.h>
+
 
 typedef struct 
 {
@@ -15,7 +17,7 @@ typedef struct
 funcionario *lista;
 void SalvarFuncionario( funcionario *f, int t);
 
-void main()
+int main()
 {
     setlocale(LC_ALL, "Portuguese");
     char nome[100];
@@ -50,14 +52,18 @@ void main()
 
         printf("\nQuantos dependentes? \n");
         scanf("%d", &func.dependentes);
-         strcpy(func.nome, nome);
+        strcpy(func.nome, nome);
+        SalvarFuncionario(func, &t);
+
     }
 
-
+    return 0;
 }
 
-void SalvarFuncionario(funcionario *f, int t){
 
+void SalvarFuncionario(funcionario f, int t){
 
-
+    lista = (funcionario) realloc(lista, ((t)+1)sizeof(funcionario));
+    lista [(*t)] = f;
+    (s) = (*s)+1;
 }
