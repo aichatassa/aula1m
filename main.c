@@ -55,10 +55,9 @@ int main()
     scanf("%d", &func->dependentes);
     strcpy(func->nome, nome);
     SalvarFuncionario(func, &tam);
-    printf("%s", func->nome);
     free(func);
   }
-
+  PrintList(tam);
   return 0;
 }
 
@@ -72,5 +71,8 @@ void SalvarFuncionario(funcionario *f, int *t){
 
 void PrintList(int t)
 {
-  for (int i = 0; i < t)
+  for (int i = 0; i < t; i++)
+  {
+    printf("%s", lista[i].nome);
+  }
 }
