@@ -8,16 +8,18 @@ typedef struct
     int vale;
     int planoSaude;
     float salario;
+    float gratificacao;
     int dependentes;
 } funcionario;
 
 funcionario *lista;
+void SalvarFuncionario();
 
 void main()
 {
+	setlocale(LC_ALL, "Portuguese");
 	char nome[100];
-	int qntFuncionario, i=0;
-	
+	int qntFuncionario, i=0, grat;
     funcionario func;
     func = (funcionario) malloc (sizeof (funcionario));
     
@@ -36,11 +38,19 @@ void main()
 	    printf("\nPossui plano de saude? \n(1-Sim | 0-Nao)");
 	    scanf("%d", &func.planoSaude);
 	    
+	    printf("\nPossui gratificação? \n(1-Sim | 0-Nao)");
+	    scanf("%d", &grat);
+	    if(grat == 1){
+	    	printf("\n Informe o valor da gratificação: ");
+	    	scanf("%f", &func.gratificacao);
+		}
+	    
 	    printf("\nEntre com o seu salario: ");
 	    scanf("%f", &func.salario);
 	    
 	    printf("\nQuantos dependentes? \n");
 	    scanf("%d", &func.dependentes);
+	    
 	}
 	
 	
