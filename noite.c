@@ -1,6 +1,7 @@
 #include <stdio.h>
-#include <stlib.h>
+#include <stdlib.h>
 
 void main()
+{
   printf("Teste");
 }
